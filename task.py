@@ -56,7 +56,6 @@ def filter_rows_above_threshold(df: pd.DataFrame, column: str, threshold: float)
     return df[df[column] > threshold]
 
 def fill_missing_values(df: pd.DataFrame, fill_value: float) -> pd.DataFrame:
-    """Sub-task 2: Replace all missing values (NaN/None) with fill_value."""
     filled_df = df.fillna(fill_value)
     return filled_df
 
