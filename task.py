@@ -67,8 +67,9 @@ def merge_dataframes(left_df: pd.DataFrame, right_df: pd.DataFrame, on_column: s
     return pd.merge(left_df, right_df, on=on_column, how="inner")
 
 def sort_and_select_top(df: pd.DataFrame, sort_by_col: str, n: int) -> pd.DataFrame:
-    """Sub-task 5: Sort df in descending order by sort_by_col and return the top n rows."""
-    pass
+    sorted_df = df.sort_values(sort_by_col, ascending=False)
+    top_rows = sorted_df.head(n)
+    return top_rows
 
 def main():
     print("Sub-task 1:\n", filter_rows_above_threshold(PRODUCTS_DF, "price", 100.0))
